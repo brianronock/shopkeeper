@@ -1,36 +1,38 @@
+# 🛒 ShopKeeper Backend – `1-api-products` Branch
 
+This branch contains the initial implementation of the **Product API** for the ShopKeeper application. It includes CRUD operations for managing products using Spring Boot and MySQL.
 
-# 🛒 ShopKeeper Backend
+## 📦 Features Implemented
 
-This is the backend of the **ShopKeeper** full-stack inventory management application. Built using **Spring Boot**, it provides a RESTful API for managing products in an inventory system.
-
-## 📦 Features
-
-- RESTful CRUD endpoints for managing products
-- Integrated with **MySQL**
-- Swagger/OpenAPI documentation for testing
-- Security ready (Spring Security dependency included)
-- Uses environment variables or `.properties` for local configuration
+- ✅ Create, Read, Update, Delete endpoints for Product entity
+- ✅ Integration with MySQL using Spring Data JPA
+- ✅ Swagger UI enabled for interactive API testing
+- ✅ Basic input validation with `@Valid`
+- 🔐 Spring Security dependency added (not yet configured)
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1. Clone & Checkout This Branch
 
 ```bash
 git clone https://github.com/your-username/shopkeeper.git
-cd shopkeeper/backend
+cd shopkeeper
+git checkout 1-api-products
+cd backend
 ```
 
-### 2. Set Environment Variables (Option A)
+### 2. Setup Local Configuration
 
-You can define the following in your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
+#### Option A: Use Environment Variables
+
+Add these to your `~/.zshrc` or shell profile:
 
 ```bash
 export SPRING_DATASOURCE_USERNAME=your_mysql_username
 export SPRING_DATASOURCE_PASSWORD=your_mysql_password
 ```
 
-### 3. OR Create a Local Properties File (Option B)
+#### Option B: Create a local `.properties` file
 
 Create `src/main/resources/application-local.properties`:
 
@@ -39,69 +41,40 @@ spring.datasource.username=your_mysql_username
 spring.datasource.password=your_mysql_password
 ```
 
-> ⚠️ Be sure to **exclude this file from Git**. It is already listed in `.gitignore`.
+> ⚠️ This file is already excluded from Git via `.gitignore`.
 
-### 4. Run the Application
+### 3. Run the Backend
 
 ```bash
 mvn spring-boot:run
 ```
 
-## 🛠 API Documentation
+## 🛠 API Endpoints
 
-Swagger UI will be available at:
+Swagger UI (after running):  
+`http://localhost:8080/swagger-ui/index.html`
 
-```
-http://localhost:8080/swagger-ui/index.html
-```
-
-Use it to test all endpoints including:
+Available endpoints:
 - `GET /api/products`
+- `GET /api/products/{id}`
 - `POST /api/products`
 - `PUT /api/products/{id}`
 - `DELETE /api/products/{id}`
 
-## 🔐 Security (Coming Soon)
-
-Spring Security is included but not yet configured. A JWT-based authentication system will be implemented.
-
----
-
-## 📁 Project Structure
+## 📁 Project Structure (Backend)
 
 ```bash
-shopkeeper/backend/
-├── src/main/java/dev/rono/shopkeeper/
-│   ├── controller/         # REST API controllers
-│   ├── model/              # JPA entities
-│   ├── repository/         # Spring Data repositories
-│   └── ShopKeeperApplication.java
-├── src/main/resources/
-│   └── application.properties
+backend/
+├── controller/         # ProductController.java
+├── model/              # Product.java (JPA entity)
+├── repository/         # ProductRepository.java
+├── config/             # SecurityConfig.java (stub)
+├── resources/
+│   ├── application.properties
+│   └── application-local.properties (ignored)
 ├── pom.xml
 └── README.md
 ```
-
----
-
-## 🧪 Future Plans
-
-- ✅ Basic CRUD for Products
-- 🔒 JWT Authentication
-- 🧾 User Roles & Authorization
-- 📊 Reporting / Metrics
-
----
-
-## 🧑‍💻 Contributing
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/my-feature`
-3. Commit changes: `git commit -m 'Add my feature'`
-4. Push to branch: `git push origin feature/my-feature`
-5. Open a pull request
-
----
 
 ## 📄 License
 
