@@ -1,0 +1,13 @@
+# IDE config
+.idea/
+*.iml
+
+# OS
+.DS_Store
+
+# Frontend (to be ignored later)
+node_modules/
+dist/
+
+# Backend
+/backend/target/
