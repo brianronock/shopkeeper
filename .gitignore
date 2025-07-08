@@ -1,13 +1,49 @@
-# IDE config
-.idea/
-*.iml
-
-# OS
+# === OS Files ===
 .DS_Store
 
-# Frontend (to be ignored later)
+# === IDE Configurations ===
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# === VS Code ===
+.vscode/
+
+# === Frontend ===
 node_modules/
 dist/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.cache/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
 
-# Backend
-/backend/target/
+# === Backend ===
+backend/HELP.md
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/src/main/resources/application-local.properties
+
+# === Build Output ===
+build/
+
+# === Spring Tool Suite ===
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# === NetBeans ===/
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
